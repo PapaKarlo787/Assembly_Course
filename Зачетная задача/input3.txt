@@ -1,0 +1,26 @@
+8
+read_c carry_0 carry_1 check_0 check_1 move_l STOP CLEAR
+move_l STOP
+21
+read_c 0 -> carry_0 _ R
+read_c 1 -> carry_1 _ R
+carry_0 0 -> carry_0 0 R
+carry_0 1 -> carry_0 1 R
+carry_0 _ -> check_0 _ L
+check_0 _ -> STOP 1 S
+check_0 1 -> CLEAR _ L
+check_0 0 -> move_l _ L
+carry_1 0 -> carry_1 0 R
+carry_1 1 -> carry_1 1 R
+carry_1 _ -> check_1 _ L
+check_1 _ -> STOP 1 S
+check_1 1 -> move_l _ L
+check_1 0 -> CLEAR _ L
+move_l 1 -> move_l 1 L
+move_l 0 -> move_l 0 L
+move_l _ -> move_l _ L
+read_c _ -> STOP 1 S
+CLEAR 0 -> CLEAR _ L
+CLEAR 1 -> CLEAR _ L
+CLEAR _ -> STOP 0 S
+101101
