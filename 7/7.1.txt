@@ -1,0 +1,11 @@
+-FPU
+	- несоответствия линукса и доса
+	- ручное копирование sw во flags
+-BCD
+	- timer
+	- num to hexed ascii
+	- keyboard scaner
+-SSE
+	- регистры
+	- операции
+	- пример
